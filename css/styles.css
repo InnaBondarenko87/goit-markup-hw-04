@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'Roboto', sans-serif;
     color:#434455 ;
@@ -32,6 +38,21 @@ padding-top: 120px;
 padding-bottom: 120px;
 }
 
+/* .header{
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+} */
+.link-current::after{
+    content:'';
+    width: 48px;
+    height: 4px;
+    background-color: #404BBF;
+    border-radius: 2px;
+    /* position: relative; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
 a{
 text-decoration: none;
 }
@@ -53,17 +74,36 @@ text-decoration: none;
 }
 
 .link {
-    list-style-type: none;
-    color:#2e2f42;
+    color:#2E2F42;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    padding: 24px 0;
+    display: flex;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.link-current{
+    color: #404BBF;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    padding: 24px 0;
+    display: flex;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link,
+.link-current{
+list-style-type: none;
+}
 .header-page-container{
     flex-shrink: 0;
     border-bottom: 1px solid #E7E9FC;
     background: var(--white, #FFF);
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header,
@@ -81,10 +121,10 @@ text-decoration: none;
     align-items: center;
 }
 
-.link-text .link{
+/* .link-text .link{
     display: block;
     padding: 24px 0;
-}
+} */
  
 .link-text{
     margin-right: 40px;
@@ -133,7 +173,13 @@ color: #404bbf;
         /*hero*/
 
 .hero{
-background-color: #2E2F42;
+background-image:linear-gradient(
+    rgba(46, 47, 66, 0.7),
+    rgba(46, 47, 66, 0.7)),
+url(../images/people-office.jpg);
+background-repeat: no-repeat;
+max-width: 1440px;
+background-position:center;
 padding: 188px 0;
 margin: auto;
 }
@@ -206,7 +252,6 @@ margin: auto;
 .heading
 .menu {
     display: flex;
-    /*padding-left: 156px;*/
     list-style-type: none;
     justify-content: space-evenly;
     
@@ -218,6 +263,22 @@ margin: auto;
     gap: 8px;
     flex-basis: calc((100% - 72px) / 4);
 }
+
+.icon-container{
+    background-color: #f4f4fd;
+    width: 264px;
+    height: 112px;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+}
+/* .icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+} */
 
 .menu{
     display: flex; 
@@ -279,6 +340,25 @@ margin: auto;
     text-transform: capitalize;
     margin-bottom: 72px;
 }
+.team-icon{
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.svg-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4D5AE5;
+    margin-top: 8px;
+}
+.team-icon-svg{
+    width: 16px;
+    height: 16px;
+}
 
 .team-link{
 background-color: #FFFFFF;
@@ -286,6 +366,7 @@ list-style-type: none;
 padding-right: 0;
 margin-right: 24px;
 border-radius: 0px 0px 4px 4px;
+                box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .team-link:last-child {
@@ -366,11 +447,13 @@ width: calc((100% - 48px) / 3);
 
         /*footer*/
 
-.footer{
-    flex-direction: column;
+.social-footer{
+    flex-direction: column; 
+    display: flex;
 }
 
 .paragraph-footer {
+    display: flex;
     color: #F4F4FD;
     /* Body */
     font-size: 16px;
@@ -408,4 +491,46 @@ padding: 100px 0;
 .footer a{
     margin-bottom: 16px;
     display: inline-block;
+}
+
+.basement,
+.footer,
+.social-list,
+.social-foote{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 120px;  
+}
+
+.social-footer{
+    color: var(--white, #FFF);
+    /* Body Medium */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+    letter-spacing: 0.32px;
+    padding-bottom: 16px;
+}
+
+.social-list{
+    display: flex;
+    list-style-type: none;
+    gap: 16px;
+    
+}
+.social{
+flex-direction: column; 
+}
+/* 
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    background-color: #fff;
 }

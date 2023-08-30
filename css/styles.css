@@ -337,9 +337,16 @@ background-size: cover;
 }
 .team-icon{
     display: flex;
-    gap: 24px;
+    /* gap: 24px; */
     justify-content: center;
     list-style-type: none;
+}
+.team-icon-link{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 .svg-list{
     display: flex;
@@ -354,11 +361,8 @@ background-size: cover;
 }
 .team-icon-svg{
    fill: #f4f4fd;
-   width: 16px;
-   height: 16px;
 }
-.team-icon-link{
-}
+
 .svg-list:hover,
 .svg-list:focus{
     background-color:#404BBF;
@@ -488,11 +492,12 @@ width: calc((100% - 48px) / 3);
         /*footer*/
 
 .footer{
-    display: flex;
+    /* display: flex; */
     align-items: baseline;
 }
 
 .footer-paragraf{
+    /* display: flex; */
     margin-right: 120px;
 }
 
@@ -542,10 +547,10 @@ width: calc((100% - 48px) / 3);
     font-weight: 700;
     text-align: left;  
 }
-.footer a{
+/* .footer a{
     margin-bottom: 16px;
     display: inline-block;
-}
+} */
 
 .basement,
 .footer,
@@ -574,7 +579,7 @@ background-color: #31D0AA;
 .svg-list-footer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:center;
     width: 40px;
     height: 40px;
     border-radius: 50%;
